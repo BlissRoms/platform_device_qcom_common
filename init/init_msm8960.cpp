@@ -70,14 +70,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
             /* 8960 */
             property_set("debug.composition.type", "dyn");
 
-            /* Overwrite ro.opengles.version value to 131072 */
-            /* 131072 is decimal of 0x20000 */
-            /* 8960 can only support GLES VERSION 2.0 */
-						valuelen = strlen(A2xx_OPEN_GLES_VERSION);
-            pi = (prop_info*) __system_property_find("ro.opengles.version");
-            if(pi != 0) {
-               __system_property_update(pi, A2xx_OPEN_GLES_VERSION, valuelen);
-            }
             break;
         case 138:
         case 153:
